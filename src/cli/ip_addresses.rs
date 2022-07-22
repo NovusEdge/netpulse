@@ -21,8 +21,6 @@ pub fn print_ip_address(interface: &str, ipv6: bool) {
 
     match parsed {
         Ok(json_vals) => {
-            logging::print_success("Fetching operation successful");
-            // println!("{:?}", json_vals);
             for vals in json_vals.as_array() {
                 for v in vals {
                     if interface == v.as_object().unwrap()["ifname"] {
