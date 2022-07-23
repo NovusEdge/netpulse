@@ -28,7 +28,6 @@ args:
         takes_value: false
 
     - ipv6:
-        short: v6
         long: ipv6
         help: Tell the CLI to specifically fetch IPv6 addresses
         takes_value: false
