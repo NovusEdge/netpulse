@@ -19,6 +19,11 @@ fn main() {
         exit(0);
     }
 
+    if matches.is_present("mac_addr") {
+        cli::mac_address::print_mac_address();
+        exit(0);
+    }
+
     if matches.is_present("fetch_ip") {
         let interface = match matches.value_of("interface") {
             Some(i) => { i },

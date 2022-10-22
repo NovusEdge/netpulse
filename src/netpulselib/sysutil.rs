@@ -4,6 +4,7 @@ use std::env;
 use regex::Regex;
 use std::process::Command;
 
+
 use crate::logging;
 
 /// detect_os reports the operating system.
