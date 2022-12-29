@@ -40,4 +40,3 @@ pub fn get_network_interfaces() -> Option<Vec<String>> {
         }
     }
 }
-
