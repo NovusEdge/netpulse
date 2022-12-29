@@ -4,7 +4,7 @@ printf "\033[1;36m[I]: Initiating uninstallation script...\033[0m\n"
 printf "\033[1;36m[?]: Continue with uninstallation?[y/N]: "
 read CONFIRM
 
-if [[ $CONFIRM -ne 'y' ]] then
+if ! [ "$CONFIRM" = "y" || "$CONFIRM" = "Y" ] then
     printf "\033[1;31m[!]: Aborting \033[0m\n"
     exit 0
 fi
@@ -18,7 +18,7 @@ rm -rf $HOME/.netpulse
 
 printf "\033[1;36m[?]: Do you wish to remove the project directory and source code?[y/N]: "
 read SRCCONFIRM
-if [[ $SRCCONFIRM -eq 'y' ]] then
+if [[ "$SRCCONFIRM" = "y" || "$SRCCONFIRM" = "Y" ]] then
     printf "\033[1;36m[I]: Removing netpulse source code and project directory: $NPULSE_ROOT\033[0m\n"
     rm -rf $NPULSE_ROOT
     printf "\033[1;32m[+]: Done!\033[0m\n"
