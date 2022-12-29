@@ -4,7 +4,7 @@ printf "\033[1;36m[I]: Initiating uninstallation script...\033[0m\n"
 printf "\033[1;36m[?]: Continue with uninstallation?[y/N]: "
 read CONFIRM
 
-if ! [ "$CONFIRM" = "y" || "$CONFIRM" = "Y" ] then
+if ! [[ "$CONFIRM" = "y" || "$CONFIRM" = "Y" ]] then
     printf "\033[1;31m[!]: Aborting \033[0m\n"
     exit 0
 fi
