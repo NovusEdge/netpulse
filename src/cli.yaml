@@ -1,0 +1,33 @@
+name: netpulse
+version: "v0.1.0"
+author: Aliasgar Khimani (NovusEdge)
+about: A CLI for fetching and working with system network information
+args:
+    - list_interfaces:
+        short: l
+        long: list-interfaces
+        help: List available network interfaces
+        takes_value: false
+
+    - version:
+        short: V
+        long: version
+        help: Print the version of netpulse CLI
+        takes_value: false
+
+    - interface:
+        short: i
+        long: interface
+        help: Specify the interface to use
+        takes_value: true
+
+    - fetch_ip:
+        short: I
+        long: fetch-ip
+        help: Fetches the IP on a particular interface. The interface must be specified using the --interface flag. By default, this fetches IPv4 address
+        takes_value: false
+
+    - ipv6:
+        long: ipv6
+        help: Tell the CLI to specifically fetch IPv6 addresses
+        takes_value: false
