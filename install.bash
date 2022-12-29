@@ -43,7 +43,6 @@ cd $PROJECT_DIR
 
 $CARGO update
 $CARGO build
-$CARGO install
 
 cd $oldcwd
 printf "\033[1;32m[+]: Done!\033[0m\n\n";

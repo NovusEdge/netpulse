@@ -1,5 +1,5 @@
 name: netpulse
-version: "v0.1.0"
+version: "v1.0.0"
 author: Aliasgar Khimani (NovusEdge)
 about: A CLI for fetching and working with system network information
 args:
