@@ -17,8 +17,7 @@ pub fn print_ip_address(interface: &str, ipv6: bool) {
     };
 
     let json_string = String::from_utf8(cmd.stdout).unwrap();
-    let parsed: Result<serde_json::Value, serde_json::Error> = 
-        serde_json::from_str(json_string.as_str());
+    let parsed: Result<serde_json::Value, serde_json::Error> = serde_json::from_str(json_string.as_str());
 
     match parsed {
         Ok(json_vals) => {
