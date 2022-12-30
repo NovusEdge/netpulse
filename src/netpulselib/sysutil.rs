@@ -1,8 +1,11 @@
 extern crate regex;
+extern crate mac_address;
 
 use std::env;
+use std::str;
 use regex::Regex;
 use std::process::Command;
+
 
 use crate::logging;
 
@@ -37,6 +40,26 @@ pub fn get_network_interfaces() -> Option<Vec<String>> {
             }
 
             Some(res)
+        }
+    }
+}
+
+/// get_device_mac_address fetches the device's mac address and returns it as
+/// a String.
+///
+/// Uses the mac_address crate.
+pub fn get_device_mac_address() -> Result<[u8; 6], String> {
+    let maddress = mac_address::get_mac_address();
+    match maddress {
+        Ok(maddr) => {
+            if let Some(addr) = maddr {
+                Ok(addr.bytes())
+            } else {
+                Err("Could not fetch MAC address".to_string())
+            }
+        }
+        Err(e) => {
+            Err(format!("{:?}", e))
         }
     }
 }
