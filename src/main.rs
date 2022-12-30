@@ -13,7 +13,7 @@ use std::process::exit;
 fn main() {
     let yaml = load_yaml!("cli.yaml");
     let matches = App::from_yaml(yaml).get_matches();
-    
+
     if matches.is_present("list_interfaces") {
         cli::interfaces::print_network_interfaces();
         exit(0);
@@ -33,5 +33,9 @@ fn main() {
         } else {
             cli::ip_addresses::print_ip_address(interface, false);
         }
+    }
+
+    if matches.is_present("mac_address") {
+        cli::mac_address::get_mac_address();
     }
 }

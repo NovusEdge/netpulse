@@ -31,3 +31,9 @@ args:
         long: ipv6
         help: Tell the CLI to specifically fetch IPv6 addresses
         takes_value: false
+
+    - mac_address:
+        short: M
+        long: fetch-mac
+        help: Fetches the MAC address of the device.
+        takes_value: false
