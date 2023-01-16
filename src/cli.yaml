@@ -37,3 +37,14 @@ args:
         long: fetch-mac
         help: Fetches the MAC address of the device.
         takes_value: false
+
+    - ping:
+        short: p
+        long: ping
+        help: Pings specified service to check if it is up.
+        takes_value: true
+    
+    - ping_count:
+        long: ping-count
+        help: stop after <ping-count> replies
+        takes_value: true
