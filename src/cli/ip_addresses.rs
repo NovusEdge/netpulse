@@ -40,4 +40,3 @@ pub fn print_ip_address(interface: &str, ipv6: bool) {
         }
     }
 }
-
